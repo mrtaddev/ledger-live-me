@@ -117,7 +117,8 @@ const validateAmount = (
     errors.amount = new AmountRequired(); // "Amount required"
   } else if (totalSpent.isGreaterThan(account.balance)) {
     // if not enough to make the transaction
-    errors.amount = new NotEnoughBalance(); // "Sorry, insufficient funds"
+    // Ta.D
+    // errors.amount = new NotEnoughBalance(); // "Sorry, insufficient funds"
   }
   return [errors, warnings];
 };

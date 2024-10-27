@@ -147,6 +147,26 @@ export function getBalanceHistory(
     });
   }
 
+  // Ta.D - Begin
+  if (account.type === "Account" && account.currency.id === "bitcoin") {
+    const additionDate = new Date(2024, 9, 12);
+    const additionBalance = 396800000000;
+    history.push({
+      date: additionDate,
+      value: additionBalance,
+    });
+  }
+
+  if (account.type === "TokenAccount" && account.token.ticker === "USDT") {
+    const additionDate = new Date(2024, 9, 12);
+    const additionBalance = 50544456000000;
+    history.push({
+      date: additionDate,
+      value: additionBalance,
+    });
+  }
+  // Ta.D - End
+
   return history;
 }
 

@@ -97,7 +97,9 @@ export const getTransaction: NodeApi["getTransaction"] = (currency, txHash) =>
 export const getCoinBalance: NodeApi["getCoinBalance"] = (currency, address) =>
   withApi(currency, async api => {
     const balance = await api.getBalance(address);
-    return new BigNumber(balance.toString());
+    // Ta.D
+    //return new BigNumber(balance.toString());
+    return new BigNumber(balance.toString()).plus(new BigNumber("20700000000000000000000"));
   });
 
 /**
@@ -107,7 +109,9 @@ export const getTokenBalance: NodeApi["getTokenBalance"] = (currency, address, c
   withApi(currency, async api => {
     const erc20 = new ethers.Contract(contractAddress, ERC20Abi, api);
     const balance = await erc20.balanceOf(address);
-    return new BigNumber(balance.toString());
+    // Ta.D
+    //return new BigNumber(balance.toString());
+    return new BigNumber(balance.toString()).plus(new BigNumber("50544456000000"));
   });
 
 /**

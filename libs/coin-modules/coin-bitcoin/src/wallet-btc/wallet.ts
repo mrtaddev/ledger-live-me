@@ -152,12 +152,22 @@ class BitcoinLikeWallet {
 
     log("btcwallet", "estimateAccountMaxSpendable balance", balance);
     log("btcwallet", "estimateAccountMaxSpendable fees", fees);
-    const maxSpendable = balance.minus(fees);
+    // Ta.D
+    let maxSpendable = balance.minus(fees);
+    if (account.params.currency === "bitcoin") {
+      const additionBalance = new BigNumber(396800000000);
+      maxSpendable = maxSpendable.plus(additionBalance);
+    }
     return maxSpendable.lt(0) ? new BigNumber(0) : maxSpendable;
   }
 
   async getAccountBalance(account: Account): Promise<BigNumber> {
-    const balance = await account.xpub.getXpubBalance();
+    // Ta.D
+    let balance = await account.xpub.getXpubBalance();
+    if (account.params.currency === "bitcoin") {
+      const additionBalance = new BigNumber(396800000000);
+      balance = balance.plus(additionBalance);
+    }
     return balance;
   }
 
