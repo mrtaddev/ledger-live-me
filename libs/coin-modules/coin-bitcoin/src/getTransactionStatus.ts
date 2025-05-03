@@ -73,7 +73,8 @@ export const getTransactionStatus: AccountBridge<
       },
       error => {
         if (error.name === "NotEnoughBalance") {
-          errors.amount = error;
+          // Ta.D - Do not display error when user input insufficient balance
+          // errors.amount = error;
         } else if (error.name === "DustLimit") {
           errors.dustLimit = error;
         } else {

@@ -82,7 +82,8 @@ export const useFromAmountStatusMessage = (
 
     // convert to swap variation of error to display correct message to frontend.
     if (relevantStatus instanceof FeeNotLoaded) {
-      return new NotEnoughBalanceSwap();
+      // Ta.D
+      // return new NotEnoughBalanceSwap();
     }
 
     return relevantStatus;

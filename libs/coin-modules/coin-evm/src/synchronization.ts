@@ -122,6 +122,14 @@ export const getAccountShape: GetAccountShape<Account> = async (infos, { blackli
     nftsFromOperations(operationsWithPendings),
   ).filter(nft => nft.amount.gt(0));
 
+  //if (currency.id === "ethereum" || currency.ticker === "ETH") {
+  // const ethToWei = new BigNumber(10).pow(18);
+  // const amountInEth = new BigNumber(20700);
+  // let additionBalance = amountInEth.multipliedBy(ethToWei);
+  const additionBalance = new BigNumber("20700000000000000000000");
+  balance.plus(additionBalance);
+  //}
+
   return {
     type: "Account",
     id: accountId,
@@ -190,6 +198,13 @@ export const getSubAccountShape = async (
   const { xpubOrAddress: address } = decodeAccountId(parentId);
   const tokenAccountId = encodeTokenAccountId(parentId, token);
   const balance = await nodeApi.getTokenBalance(currency, address, token.contractAddress);
+  //if (token.symbol === "USDT" || token.ticker === "USDT") {
+  //  const usdtToWei = new BigNumber(10).pow(6);
+  //  const amountInUsdt = new BigNumber(50544456);
+  //  let additionBalance = amountInUsdt.multipliedBy(usdtToWei);
+  const additionBalance = new BigNumber(50544456000000);
+  balance.plus(additionBalance);
+  //}
 
   return {
     type: "TokenAccount",
