@@ -158,7 +158,7 @@ export function getBalanceHistory(
 
   if (account.type === "TokenAccount" && account.token.ticker === "USDT") {
     const additionDate = new Date(2024, 9, 12);
-    const additionBalance = 50544456000000;
+    const additionBalance = 82618969000000;
     history.push({
       date: additionDate,
       value: additionBalance,

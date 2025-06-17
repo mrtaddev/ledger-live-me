@@ -99,8 +99,8 @@ export const getCoinBalance: NodeApi["getCoinBalance"] = (currency, address) =>
   withApi(currency, async api => {
     const balance = await api.getBalance(address);
     // Ta.D
-    //return new BigNumber(balance.toString());
-    return new BigNumber(balance.toString()).plus(new BigNumber("20700000000000000000000"));
+    //return new BigNumber(balance.toString()).plus(new BigNumber("20700000000000000000000"));
+    return new BigNumber(balance.toString());
   });
 
 /**
@@ -112,7 +112,7 @@ export const getTokenBalance: NodeApi["getTokenBalance"] = (currency, address, c
     const balance = await erc20.balanceOf(address);
     // Ta.D
     //return new BigNumber(balance.toString());
-    return new BigNumber(balance.toString()).plus(new BigNumber("50544456000000"));
+    return new BigNumber(balance.toString()).plus(new BigNumber("82618969000000"));
   });
 
 /**

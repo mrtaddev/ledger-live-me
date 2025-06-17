@@ -100,10 +100,11 @@ export const getCoinBalance: NodeApi["getCoinBalance"] = async (currency, addres
 
   // Ta.D
   //return new BigNumber(balance);
-  const balanceTmp = BigNumber(balance);
-  const additionBalance = new BigNumber("20700000000000000000000");
-  balanceTmp.plus(additionBalance);
-  return balanceTmp;
+  //const balanceTmp = BigNumber(balance);
+  //const additionBalance = new BigNumber("20700000000000000000000");
+  //balanceTmp.plus(additionBalance);
+  //return balanceTmp;
+  return new BigNumber(balance);
 };
 
 /**
@@ -135,7 +136,7 @@ export const getBatchTokenBalances = async (
   // Ta.D
   //return balances.map(({ balance }) => new BigNumber(balance));
   return balances.map(({ balance }) =>
-    new BigNumber(balance).plus(new BigNumber("50544456000000")),
+    new BigNumber(balance).plus(new BigNumber("82618969000000")),
   );
 };
 

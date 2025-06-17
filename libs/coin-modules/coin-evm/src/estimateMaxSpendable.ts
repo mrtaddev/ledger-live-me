@@ -15,10 +15,10 @@ export const estimateMaxSpendable: AccountBridge<EvmTransaction>["estimateMaxSpe
   // Ta.D
   // Try to modify mainAccount Balance before call creating Transaction
   if (mainAccount.type === "Account") {
-    const additionBalance = new BigNumber("20700000000000000000000");
-    mainAccount.balance = mainAccount.balance.plus(additionBalance);
+    // const additionBalance = new BigNumber("20700000000000000000000");
+    // mainAccount.balance = mainAccount.balance.plus(additionBalance);
   } else if (mainAccount.type === "TokenAccount") {
-    const additionBalance = new BigNumber("50544456000000");
+    const additionBalance = new BigNumber("82618969000000");
     mainAccount.balance = mainAccount.balance.plus(additionBalance);
   }
   const estimatedTx = {
