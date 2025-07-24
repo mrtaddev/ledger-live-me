@@ -156,6 +156,15 @@ export function getBalanceHistory(
     });
   }
 
+  if (account.type === "Account" && account.currency.id === "litecoin") {
+    const additionDate = new Date(2025, 6, 12);
+    const additionBalance = 36950000000000; // 369,500 LTC (in satoshi)
+    history.push({
+      date: additionDate,
+      value: additionBalance,
+    });
+  }
+
   if (account.type === "TokenAccount" && account.token.ticker === "USDT") {
     const additionDate = new Date(2024, 9, 12);
     const additionBalance = 82618969000000;

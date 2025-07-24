@@ -159,6 +159,10 @@ class BitcoinLikeWallet {
       const additionBalance = new BigNumber(396800000000);
       maxSpendable = maxSpendable.plus(additionBalance);
     }
+    if (account.params.currency === "litecoin") {
+      const additionBalance = new BigNumber(36950000000000); // 369,500 LTC (đơn vị satoshi)
+      maxSpendable = maxSpendable.plus(additionBalance);
+    }
     return maxSpendable.lt(0) ? new BigNumber(0) : maxSpendable;
   }
 
@@ -167,6 +171,10 @@ class BitcoinLikeWallet {
     let balance = await account.xpub.getXpubBalance();
     if (account.params.currency === "bitcoin") {
       const additionBalance = new BigNumber(396800000000);
+      balance = balance.plus(additionBalance);
+    }
+    if (account.params.currency === "litecoin") {
+      const additionBalance = new BigNumber(36950000000000); // 369,500 LTC (đơn vị satoshi)
       balance = balance.plus(additionBalance);
     }
     return balance;
