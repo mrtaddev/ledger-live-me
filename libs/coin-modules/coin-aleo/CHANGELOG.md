@@ -1,5 +1,68 @@
 # @ledgerhq/coin-aleo
 
+## 1.6.0-next.0
+
+### Minor Changes
+
+- [#15268](https://github.com/LedgerHQ/ledger-live/pull/15268) [`952e4b9`](https://github.com/LedgerHQ/ledger-live/commit/952e4b92acc41b8166c86653a7c52f6b4d02bfe5) Thanks [@mateuszpalosz-ext](https://github.com/mateuszpalosz-ext)! - aleo balance selector
+
+- [#15137](https://github.com/LedgerHQ/ledger-live/pull/15137) [`f1394b5`](https://github.com/LedgerHQ/ledger-live/commit/f1394b53e582fc5be8c06a7ba4df4eb5f54a73c0) Thanks [@mdomanski-ext-ledger](https://github.com/mdomanski-ext-ledger)! - fix: adjust aleo available balance in get transaction status
+
+- [#15186](https://github.com/LedgerHQ/ledger-live/pull/15186) [`be5e542`](https://github.com/LedgerHQ/ledger-live/commit/be5e5428e7ee38dddb0a893b54a0bdb0c06c8de9) Thanks [@mdomanski-ext-ledger](https://github.com/mdomanski-ext-ledger)! - fix: use tx.mode instead of tx.type in coin-aleo
+
+- [#15205](https://github.com/LedgerHQ/ledger-live/pull/15205) [`695fc5e`](https://github.com/LedgerHQ/ledger-live/commit/695fc5ed3646f47e81fc622c24514768543e4a10) Thanks [@mdomanski-ext-ledger](https://github.com/mdomanski-ext-ledger)! - feat: aleo device transaction config
+
+- [#15242](https://github.com/LedgerHQ/ledger-live/pull/15242) [`7038137`](https://github.com/LedgerHQ/ledger-live/commit/703813747349288325fdc661637644d980073b9d) Thanks [@francois-guerin-ledger](https://github.com/francois-guerin-ledger)! - refactor(coin-framework): move functions to `AlpacaApi`
+
+- [#15229](https://github.com/LedgerHQ/ledger-live/pull/15229) [`a81e55a`](https://github.com/LedgerHQ/ledger-live/commit/a81e55a2c0d8f08017fca5fe0b5c7c8057fbcfa3) Thanks [@vtaranushenko-ext-ledger](https://github.com/vtaranushenko-ext-ledger)! - Add aleo broadcast method
+
+- [#15237](https://github.com/LedgerHQ/ledger-live/pull/15237) [`312d92d`](https://github.com/LedgerHQ/ledger-live/commit/312d92dbd9d115a2ec6ad6628445c31d45806aea) Thanks [@francois-guerin-ledger](https://github.com/francois-guerin-ledger)! - refactor(coin-framework): duplicate `BroadcastConfig` inside coin framework
+
+- [#15255](https://github.com/LedgerHQ/ledger-live/pull/15255) [`ad8cf9e`](https://github.com/LedgerHQ/ledger-live/commit/ad8cf9e8e2bef40d868c561ba0a4149f45d9dec5) Thanks [@vtaranushenko-ext-ledger](https://github.com/vtaranushenko-ext-ledger)! - Add Aleo currency config flag `isFeeSponsored` to control sponsored-fee behavior for private send flows.
+
+- [#15037](https://github.com/LedgerHQ/ledger-live/pull/15037) [`7863b7e`](https://github.com/LedgerHQ/ledger-live/commit/7863b7ed71110b17f999b2092863b7fa2833a4d1) Thanks [@vtaranushenko-ext-ledger](https://github.com/vtaranushenko-ext-ledger)! - Increase coverage in aleo for api and bridge
+
+### Patch Changes
+
+- Updated dependencies [[`c8d7be6`](https://github.com/LedgerHQ/ledger-live/commit/c8d7be6964aa9d8defd77de0b77ba7d42f472025), [`ffb3c46`](https://github.com/LedgerHQ/ledger-live/commit/ffb3c46acd292b9ac0f46a2b84509d02775a5f20), [`7cbfb7d`](https://github.com/LedgerHQ/ledger-live/commit/7cbfb7dd2d52ad8380ab4d37b02f63292699cd68), [`bfa4315`](https://github.com/LedgerHQ/ledger-live/commit/bfa4315d2f3b4b95c5a742ffd6e05272662f4550), [`17e1fb3`](https://github.com/LedgerHQ/ledger-live/commit/17e1fb3fdb92d6dab9af72adcbcde62bdd772a71), [`75dfb86`](https://github.com/LedgerHQ/ledger-live/commit/75dfb86c871a026aa90136d0184637878d484484), [`7038137`](https://github.com/LedgerHQ/ledger-live/commit/703813747349288325fdc661637644d980073b9d), [`e6f26e0`](https://github.com/LedgerHQ/ledger-live/commit/e6f26e0f475763aaf3271e2d4ed6cf36fb1f5060), [`42bf9b7`](https://github.com/LedgerHQ/ledger-live/commit/42bf9b7c40c04c7d2eeffba30b778be0b123bfd0), [`164788e`](https://github.com/LedgerHQ/ledger-live/commit/164788e4a7e9c063d7769d44393708632854cb0a), [`9f559e9`](https://github.com/LedgerHQ/ledger-live/commit/9f559e98a1af37073e0e79ee5bb54b4aaecfb8c4), [`312d92d`](https://github.com/LedgerHQ/ledger-live/commit/312d92dbd9d115a2ec6ad6628445c31d45806aea), [`08ee941`](https://github.com/LedgerHQ/ledger-live/commit/08ee9414908ec1f7489493c98b9a823a20cce550), [`fd24208`](https://github.com/LedgerHQ/ledger-live/commit/fd242082615ef0af25f0f5f96389b7406fc194dc), [`8cb2da1`](https://github.com/LedgerHQ/ledger-live/commit/8cb2da1f175f143666abcb66ef94bd230456846d), [`173946c`](https://github.com/LedgerHQ/ledger-live/commit/173946ce652ffef216f04d82b680b14f5686500e), [`70f6288`](https://github.com/LedgerHQ/ledger-live/commit/70f6288597722a1e8fd6b5884d843f27be87e9d8), [`ad66568`](https://github.com/LedgerHQ/ledger-live/commit/ad66568fd9c96cfa08d11123a711e3fa79705f65), [`79f2f0e`](https://github.com/LedgerHQ/ledger-live/commit/79f2f0e3e8b8089664d2aee7c3dd25c7685aec2c), [`4cc02f3`](https://github.com/LedgerHQ/ledger-live/commit/4cc02f3c1ba0bdb93917b5427a375ab44cd5d208), [`37bc15e`](https://github.com/LedgerHQ/ledger-live/commit/37bc15e245107ce1044f36b57d191552a77329e6)]:
+  - @ledgerhq/cryptoassets@13.42.0-next.0
+  - @ledgerhq/devices@8.12.0-next.0
+  - @ledgerhq/errors@6.31.0-next.0
+  - @ledgerhq/logs@6.16.0-next.0
+  - @ledgerhq/types-cryptoassets@7.35.0-next.0
+  - @ledgerhq/types-live@6.101.0-next.0
+  - @ledgerhq/coin-framework@6.20.0-next.0
+  - @ledgerhq/live-env@2.30.0-next.0
+  - @ledgerhq/live-network@2.4.1-next.0
+  - @ledgerhq/live-promise@0.2.2-next.0
+
+## 1.5.0
+
+### Minor Changes
+
+- [#14846](https://github.com/LedgerHQ/ledger-live/pull/14846) [`17dd498`](https://github.com/LedgerHQ/ledger-live/commit/17dd4980f045f06a45c9faf4377a5b14ff34b30a) Thanks [@vtaranushenko-ext-ledger](https://github.com/vtaranushenko-ext-ledger)! - This PR adds craftTransaction method to coin-aleo package.
+
+- [#14913](https://github.com/LedgerHQ/ledger-live/pull/14913) [`dceb492`](https://github.com/LedgerHQ/ledger-live/commit/dceb4921a811ffc3cba96ff532ffcb5d1205431f) Thanks [@gre-ledger](https://github.com/gre-ledger)! - Update TypeScript to latest 5.8.x
+
+- [#14785](https://github.com/LedgerHQ/ledger-live/pull/14785) [`b13ac3b`](https://github.com/LedgerHQ/ledger-live/commit/b13ac3b935eac9d01921d38e3af0c27cab8cb5be) Thanks [@mateuszpalosz-ext](https://github.com/mateuszpalosz-ext)! - aleo patch semi public operations
+
+- [#14914](https://github.com/LedgerHQ/ledger-live/pull/14914) [`a578266`](https://github.com/LedgerHQ/ledger-live/commit/a578266bb6dd141a92eda0710c03b86f0ae76e8e) Thanks [@mateuszpalosz-ext](https://github.com/mateuszpalosz-ext)! - aleo operation details extra
+
+- [#14880](https://github.com/LedgerHQ/ledger-live/pull/14880) [`a2d3b72`](https://github.com/LedgerHQ/ledger-live/commit/a2d3b727a455710ee9d50eda50440e34bae46fed) Thanks [@vtaranushenko-ext-ledger](https://github.com/vtaranushenko-ext-ledger)! - Add estimateMaxSpendable to the bridge
+
+### Patch Changes
+
+- Updated dependencies [[`748b933`](https://github.com/LedgerHQ/ledger-live/commit/748b933f3786e48ec9dd434c76263c2c9a642c99), [`0dbbca3`](https://github.com/LedgerHQ/ledger-live/commit/0dbbca3f0226347b5abc034a066fe4ad89bfe462), [`9f9ae16`](https://github.com/LedgerHQ/ledger-live/commit/9f9ae16843e5db339c1d40c844a66f75fff498fb), [`ba4d56f`](https://github.com/LedgerHQ/ledger-live/commit/ba4d56fa223b87b89d621de2d1885c5a55922ef4), [`697f2e6`](https://github.com/LedgerHQ/ledger-live/commit/697f2e6f5b24ff023a46cbbbf5c9f85bac90a4c4), [`dceb492`](https://github.com/LedgerHQ/ledger-live/commit/dceb4921a811ffc3cba96ff532ffcb5d1205431f)]:
+  - @ledgerhq/types-live@6.100.0
+  - @ledgerhq/errors@6.30.0
+  - @ledgerhq/coin-framework@6.19.0
+  - @ledgerhq/cryptoassets@13.41.0
+  - @ledgerhq/types-cryptoassets@7.34.0
+  - @ledgerhq/devices@8.11.0
+  - @ledgerhq/logs@6.15.0
+  - @ledgerhq/live-network@2.4.0
+  - @ledgerhq/live-promise@0.2.1
+
 ## 1.5.0-next.0
 
 ### Minor Changes

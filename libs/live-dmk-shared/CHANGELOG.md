@@ -1,5 +1,31 @@
 # @ledgerhq/live-dmk
 
+## 0.21.0-next.0
+
+### Minor Changes
+
+- [#10765](https://github.com/LedgerHQ/ledger-live/pull/10765) [`e5096c1`](https://github.com/LedgerHQ/ledger-live/commit/e5096c1c6730707de81e958e000333f06058bf07) Thanks [@Antoine-bls83](https://github.com/Antoine-bls83)! - Device Deprecation on Nano S
+
+### Patch Changes
+
+- Updated dependencies [[`c8d7be6`](https://github.com/LedgerHQ/ledger-live/commit/c8d7be6964aa9d8defd77de0b77ba7d42f472025)]:
+  - @ledgerhq/hw-transport@6.34.0-next.0
+  - @ledgerhq/logs@6.16.0-next.0
+  - @ledgerhq/types-devices@6.30.0-next.0
+
+## 0.20.0
+
+### Minor Changes
+
+- [#14913](https://github.com/LedgerHQ/ledger-live/pull/14913) [`dceb492`](https://github.com/LedgerHQ/ledger-live/commit/dceb4921a811ffc3cba96ff532ffcb5d1205431f) Thanks [@gre-ledger](https://github.com/gre-ledger)! - Update TypeScript to latest 5.8.x
+
+### Patch Changes
+
+- Updated dependencies [[`dceb492`](https://github.com/LedgerHQ/ledger-live/commit/dceb4921a811ffc3cba96ff532ffcb5d1205431f)]:
+  - @ledgerhq/types-devices@6.29.0
+  - @ledgerhq/hw-transport@6.33.0
+  - @ledgerhq/logs@6.15.0
+
 ## 0.20.0-next.0
 
 ### Minor Changes

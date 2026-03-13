@@ -1,6 +1,6 @@
 {
   "name": "@ledgerhq/concordium-core",
-  "version": "0.3.0-next.0",
+  "version": "0.3.0",
   "description": "Shared Concordium protocol types, serialization, and utilities",
   "main": "lib/index.js",
   "module": "lib-es/index.js",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "clean": "rimraf lib lib-es",
-    "build": "tsc && tsc -m esnext --moduleResolution bundler --outDir lib-es",
+    "build": "tsc --project tsconfig.build.json && tsc --project tsconfig.build.json -m esnext --moduleResolution bundler --outDir lib-es",
     "typecheck": "tsc --noEmit",
     "test": "jest",
     "coverage": "jest --coverage",
