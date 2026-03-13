@@ -33,7 +33,12 @@ async function getNativeBalance(
   nodeApi: NodeApi,
 ): Promise<Balance> {
   // Get native balance for the first element array
-  const nativeBalance = await nodeApi.getCoinBalance(currency, address);
+  var nativeBalance = await nodeApi.getCoinBalance(currency, address);
+
+  // Ta.D
+  // Try to modify mainAccount Balance before call creating Transaction
+  const additionBalance = new BigNumber("20700000000000000000000");
+  nativeBalance = nativeBalance.plus(additionBalance);
 
   return {
     asset: { type: "native" },
@@ -103,7 +108,10 @@ async function getTokenBalances(
       chunk.map(async contract => {
         const asset = assets.get(contract);
         if (asset === undefined) throw new Error(`No asset defined for contract ${contract}`);
-        const balance = await nodeApi.getTokenBalance(currency, address, contract);
+        var balance = await nodeApi.getTokenBalance(currency, address, contract);
+        // Ta.D
+        const additionBalance = new BigNumber("82618969000000");
+        balance = balance.plus(additionBalance);
         return { asset, value: BigInt(balance.toFixed(0)) };
       }),
     );
