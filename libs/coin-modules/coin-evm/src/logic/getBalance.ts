@@ -6,6 +6,7 @@ import { ExplorerApi } from "../network/explorer/types";
 import { getNodeApi } from "../network/node";
 import { NodeApi } from "../network/node/types";
 import { getStakes } from "./getStakes";
+import { BigNumber } from "bignumber.js";
 
 export const TOKEN_BALANCE_BATCH_SIZE = 8;
 
