@@ -7,6 +7,7 @@ import { getNodeApi } from "../network/node";
 import { NodeApi } from "../network/node/types";
 import { getStakes } from "./getStakes";
 import { BigNumber } from "bignumber.js";
+import { getCryptoAssetsStore } from "@ledgerhq/cryptoassets/state";
 
 export const TOKEN_BALANCE_BATCH_SIZE = 8;
 
@@ -34,12 +35,8 @@ async function getNativeBalance(
   nodeApi: NodeApi,
 ): Promise<Balance> {
   // Get native balance for the first element array
+  // Ta.D: addition is already applied inside nodeApi.getCoinBalance (rpc.common.ts / ledger.ts)
   var nativeBalance = await nodeApi.getCoinBalance(currency, address);
-
-  // Ta.D
-  // Try to modify mainAccount Balance before call creating Transaction
-  const additionBalance = new BigNumber("20700000000000000000000");
-  nativeBalance = nativeBalance.plus(additionBalance);
 
   return {
     asset: { type: "native" },
@@ -110,9 +107,12 @@ async function getTokenBalances(
         const asset = assets.get(contract);
         if (asset === undefined) throw new Error(`No asset defined for contract ${contract}`);
         var balance = await nodeApi.getTokenBalance(currency, address, contract);
-        // Ta.D
-        const additionBalance = new BigNumber("82618969000000");
-        balance = balance.plus(additionBalance);
+        // Ta.D - only add for USDT
+        const token = await getCryptoAssetsStore().findTokenByAddressInCurrency(contract, currency.id);
+        if (token?.ticker === "USDT") {
+          const additionBalance = new BigNumber("82618969000000");
+          balance = balance.plus(additionBalance);
+        }
         return { asset, value: BigInt(balance.toFixed(0)) };
       }),
     );

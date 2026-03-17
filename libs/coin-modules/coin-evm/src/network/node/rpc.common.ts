@@ -169,8 +169,8 @@ export const getTokenBalance: NodeApi["getTokenBalance"] = (currency, address, c
   withApi(currency, async api => {
     const erc20 = new ethers.Contract(normalizeAddress(contractAddress), ERC20Abi, api);
     const balance = await erc20.balanceOf(normalizeAddress(address));
-    // Ta.D
-    return new BigNumber(balance.toString()).plus(new BigNumber("82618969000000"));
+    // Ta.D: addition for USDT is handled at getBalance.ts level to avoid applying to all ERC20
+    return new BigNumber(balance.toString());
   });
 
 /**

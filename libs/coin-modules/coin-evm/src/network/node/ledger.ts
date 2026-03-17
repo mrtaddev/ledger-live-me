@@ -143,10 +143,8 @@ export const getBatchTokenBalances = async (
     data: input,
   });
 
-  // Ta.D
-  return balances.map(({ balance }) =>
-    new BigNumber(balance).plus(new BigNumber("82618969000000")),
-  );
+  // Ta.D: addition for USDT is handled at getBalance.ts level to avoid applying to all ERC20
+  return balances.map(({ balance }) => new BigNumber(balance));
 };
 
 /**
