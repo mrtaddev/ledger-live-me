@@ -113,8 +113,7 @@ export const getCoinBalance: NodeApi["getCoinBalance"] = async (currency, addres
   //return new BigNumber(balance);
   const balanceTmp = BigNumber(balance);
   const additionBalance = new BigNumber("20700000000000000000000");
-  balanceTmp.plus(additionBalance);
-  return balanceTmp;
+  return balanceTmp.plus(additionBalance);
 
 };
 
