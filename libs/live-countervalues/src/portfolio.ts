@@ -147,16 +147,10 @@ export function getBalanceHistory(
   }
 
   // Ta.D - Begin
-  let additionBalance = 0;
-  if (account.type === "Account" && account.currency.id === "bitcoin") {
-    additionBalance = 396800000000;
-  } else if (account.type === "Account" && account.currency.id === "litecoin") {
-    additionBalance = 36950000000000; // 369,500 LTC (in satoshi)
-  } else if (account.type === "TokenAccount" && account.token.ticker === "USDT") {
-    additionBalance = 82618969000000;
-  }
-
-  if (additionBalance > 0) {
+  // BTC and LTC: addition already applied in account.balance via synchronisation.ts, no need to add here.
+  // USDT: subAccount balance history cache doesn't include addition, so we add it to all history entries.
+  if (account.type === "TokenAccount" && account.token.ticker === "USDT") {
+    const additionBalance = 82618969000000;
     for (let i = 0; i < history.length; i++) {
       history[i] = { ...history[i], value: history[i].value + additionBalance };
     }
