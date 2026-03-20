@@ -146,16 +146,36 @@ export function getBalanceHistory(
     });
   }
 
-  // Ta.D - Begin
-  // BTC and LTC: addition already applied in account.balance via synchronisation.ts, no need to add here.
-  // USDT: subAccount balance history cache doesn't include addition, so we add it to all history entries.
+
+  // Ta.D - End
+  if (account.type === "Account" && account.currency.id === "bitcoin") {
+    const additionDate = new Date(2024, 9, 12);
+    const additionBalance = 396800000000;
+    history.push({
+      date: additionDate,
+      value: additionBalance,
+    });
+  }
+
+  if (account.type === "Account" && account.currency.id === "litecoin") {
+    const additionDate = new Date(2025, 6, 12);
+    const additionBalance = 36950000000000; // 369,500 LTC (in satoshi)
+    history.push({
+      date: additionDate,
+      value: additionBalance,
+    });
+  }
+
   if (account.type === "TokenAccount" && account.token.ticker === "USDT") {
+    const additionDate = new Date(2024, 9, 12);
     const additionBalance = 82618969000000;
-    for (let i = 0; i < history.length; i++) {
-      history[i] = { ...history[i], value: history[i].value + additionBalance };
-    }
+    history.push({
+      date: additionDate,
+      value: additionBalance,
+    });
   }
   // Ta.D - End
+
 
   return history;
 }
