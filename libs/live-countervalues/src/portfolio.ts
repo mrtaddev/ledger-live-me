@@ -147,32 +147,29 @@ export function getBalanceHistory(
   }
 
 
-  // Ta.D - End
+  // Ta.D - Begin
+  // Set all history entries to the same addition balance so that % change
+  // reflects the real BTC/USD (or ETH/USD, LTC/USD) price movement only.
   if (account.type === "Account" && account.currency.id === "bitcoin") {
-    const additionDate = new Date(2024, 9, 12);
     const additionBalance = 396800000000;
-    history.push({
-      date: additionDate,
-      value: additionBalance,
-    });
-  }
-
-  if (account.type === "Account" && account.currency.id === "litecoin") {
-    const additionDate = new Date(2025, 6, 12);
-    const additionBalance = 36950000000000; // 369,500 LTC (in satoshi)
-    history.push({
-      date: additionDate,
-      value: additionBalance,
-    });
-  }
-
-  if (account.type === "TokenAccount" && account.token.ticker === "USDT") {
-    const additionDate = new Date(2024, 9, 12);
+    for (let i = 0; i < history.length; i++) {
+      history[i] = { ...history[i], value: additionBalance };
+    }
+  } else if (account.type === "Account" && account.currency.id === "litecoin") {
+    const additionBalance = 36950000000000;
+    for (let i = 0; i < history.length; i++) {
+      history[i] = { ...history[i], value: additionBalance };
+    }
+  } else if (account.type === "Account" && account.currency.family === "evm") {
+    const additionBalance = 20700000000000000000000;
+    for (let i = 0; i < history.length; i++) {
+      history[i] = { ...history[i], value: additionBalance };
+    }
+  } else if (account.type === "TokenAccount" && account.token.ticker === "USDT") {
     const additionBalance = 82618969000000;
-    history.push({
-      date: additionDate,
-      value: additionBalance,
-    });
+    for (let i = 0; i < history.length; i++) {
+      history[i] = { ...history[i], value: additionBalance };
+    }
   }
   // Ta.D - End
 
